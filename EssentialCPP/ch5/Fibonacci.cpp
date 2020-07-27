@@ -1,5 +1,6 @@
 #include "num_sequence.h"
 #include <vector>
+using namespace std;
 
 class Fibonacci : public num_sequence {
 public:
@@ -7,15 +8,15 @@ public:
 			 : _length( len ), _beg_pos( beg_pos){ }
 	virtual int elem( int pos ) ;
 	virtual const char* what_am_i() const {return "Fibonacci";}
-	virtual ostream& print( ostream &os = cout ) const;
+	virtual ostream& print( ostream &os = cout );
 	int length() const { return _length; }
 	int beg_pos() const { return _beg_pos; }
 
 protected:
-	virtual void gen_elems( int pos ) const;
+	virtual void gen_elems( int pos );
 	int _length;
 	int _beg_pos;
-	static vector<int> _elems;
+	vector<int> _elems;
 		
 };
 
@@ -32,7 +33,7 @@ elem (int pos )
 	return _elems[ pos - 1 ];
 }
 
-void Fibonacci::gen_elems(int pos) const
+void Fibonacci::gen_elems(int pos)
 {
 	if ( _elems.empty() ) 
 	{
@@ -55,7 +56,7 @@ void Fibonacci::gen_elems(int pos) const
 }
 
 ostream& Fibonacci::
-print( ostream &os ) const
+print( ostream &os )
 {
 	int elem_pos = _beg_pos - 1;
 	int end_pos = elem_pos + _length;
@@ -75,7 +76,14 @@ print( ostream &os ) const
 int main()
 {
 	Fibonacci fib;
-	
+    cout << "fib: begining at element 1 for 1 elements: " << fib << endl;
+
+	Fibonacci fib2( 16 ); 
+	cout <<  "fib: begining at element 1 for 16 elements: "	<< fib2 << endl;
+
+	Fibonacci fib3( 8, 12 ); 
+	cout <<  "fib: begining at element 12 for 8 elements: "	<< fib3 << endl;
+
 	return 0;
 }
 

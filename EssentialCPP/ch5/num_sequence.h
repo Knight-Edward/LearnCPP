@@ -11,17 +11,17 @@ public:
 	static int max_elems() {
 		return _max_elems;
 	}
-    virtual ostream& print(ostream &os = cout) const = 0; //this function can only read, cannot modify object
+    virtual ostream& print(ostream &os = cout)  = 0; //this function can only read, cannot modify object
 
 protected:
-    virtual void gen_elems(int pos) const = 0;
-	bool check_integrity(int pos, int size) const;
+    virtual void gen_elems(int pos) = 0;
+	bool check_integrity(int pos, int size);
 
 	const static int _max_elems = 1024;
 };
 
 bool num_sequence::
-check_integrity(int pos, int size) const
+check_integrity(int pos, int size)
 {
 	if(pos <= 0 || pos > _max_elems )
 	{
@@ -36,7 +36,7 @@ check_integrity(int pos, int size) const
 	return true;
 }
 
-ostream& operator<< (ostream& os, const num_sequence &ns)
+ostream& operator<< (ostream& os, num_sequence &ns)
 {
 	return ns.print( os );
 }
