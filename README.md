@@ -10,6 +10,7 @@ data structure and algorithm
 3, Course Reader for Stanford C++ course
 4, Python Projects
 5, Leetcode Problems
+6, Papers on Languages
 
 ## Contents
 1, codes
