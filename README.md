@@ -15,3 +15,8 @@ data structure and algorithm
 ## Contents
 1, codes
 2, documents
+
+## Update
+* Keep Learing the Stuff
+  * Pure C
+  * OOP
