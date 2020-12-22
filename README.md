@@ -20,3 +20,6 @@ data structure and algorithm
 * Keep Learing the Stuff
   * Pure C
   * OOP
+  
+## Other Stuff
+* Design Patterns
